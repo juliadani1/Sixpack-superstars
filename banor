@@ -1,0 +1,24 @@
+import pygame 
+
+class Map: 
+    def mapChoice(input):
+        #De olika banornas bakgrund
+        backgroundSpace = pygame.image.load('space.png')
+        backgroundGrass = pygame.image.load('grass.png')
+        backgroundRocks = pygame.image.load('rocks.png')
+        backgroundWater = pygame.image.load('water.png')
+
+        #användaren väljer bana 1-4
+        if input == 1:
+            background = backgroundSpace
+        elif input == 2:
+            background = backgroundGrass
+        elif input == 3:
+            background = backgroundRocks
+        elif input == 4:
+            background = backgroundWater
+
+    GAME_WIDTH =700
+    GAME_HEIGHT = 700
+    SPACE_SIZE = 50
+    BACKGROUND_COLOR = mapChoice()
