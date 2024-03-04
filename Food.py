@@ -1,7 +1,7 @@
 class Food:
     def __init__(self):
         self.position = (0, 0)
-        self.color = (255, 0, 0)
+        self.color = (253, 253, 150)
         self.randomize_position()
 
     def randomize_position(self):
