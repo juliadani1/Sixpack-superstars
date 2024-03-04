@@ -43,7 +43,7 @@ class Snake:
         for p in self.positions:
             pygame.draw.rect(surface, self.color, (p[0], p[1], GRIDSIZE, GRIDSIZE))
 
-class Food:
+class Coin:
     def __init__(self):
         self.position = (0, 0)
         self.color = (255, 0, 0)
@@ -65,8 +65,8 @@ def drawGrid(surface):
                 rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
                 pygame.draw.rect(surface, (84, 194, 205), rr)
 
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 480
+SCREEN_WIDTH = 700
+SCREEN_HEIGHT = 700
 
 GRIDSIZE = 20
 GRID_WIDTH = SCREEN_WIDTH // GRIDSIZE
@@ -86,7 +86,7 @@ def main():
     surface = surface.convert()
 
     snake = Snake()
-    food = Food()
+    coin = Coin()
 
     while True:
         for event in pygame.event.get():
