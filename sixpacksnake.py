@@ -29,18 +29,6 @@ def drawGrid(surface):
 
 From Constants.py import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, UP, DOWN, LEFT, RIGHT 
 
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 480
-
-GRIDSIZE = 20
-GRID_WIDTH = SCREEN_WIDTH // GRIDSIZE
-GRID_HEIGHT = SCREEN_HEIGHT // GRIDSIZE
-
-UP = (0,-1)
-DOWN = (0,1)
-LEFT = (-1,0)
-RIGHT = (1,0)
-
 def main():
     pygame.init()
     clock = pygame.time.Clock()
