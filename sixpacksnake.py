@@ -105,13 +105,13 @@ def main():
 
         snake.move()
 
-        if snake.get_head_position() == food.position:
+        if snake.get_head_position() == coin.position:
             snake.length += 1
-            food.randomize_position()
+            coin.randomize_position()
 
         drawGrid(surface)
         snake.draw(surface)
-        food.draw(surface)
+        coin.draw(surface)
         screen.blit(surface, (0,0))
         pygame.display.update()
         clock.tick(12)
