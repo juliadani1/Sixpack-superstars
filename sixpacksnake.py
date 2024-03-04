@@ -65,8 +65,8 @@ def drawGrid(surface):
                 rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
                 pygame.draw.rect(surface, (84, 194, 205), rr)
 
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 480
+SCREEN_WIDTH = 700
+SCREEN_HEIGHT = 700
 
 GRIDSIZE = 20
 GRID_WIDTH = SCREEN_WIDTH // GRIDSIZE
