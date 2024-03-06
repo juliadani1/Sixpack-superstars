@@ -7,9 +7,9 @@ def display_menu():
     screen = pygame.display.set_mode((700, 700))
     font = pygame.font.Font(None, 36)
 
-    button1 = pygame.Rect(50, 100, 200, 50)  # x, y, width, height
-    button2 = pygame.Rect(50, 200, 200, 50)
-    button3 = pygame.Rect(50, 300, 200, 50)
+    button1 = pygame.Rect(250, 100, 200, 50)  # x, y, width, height
+    button2 = pygame.Rect(250, 200, 200, 50)
+    button3 = pygame.Rect(250, 300, 200, 50)
 
     while True:
         for event in pygame.event.get():
@@ -34,13 +34,13 @@ def display_menu():
         pygame.draw.rect(screen, [210, 1, 23], button3)  # draw button
 
         text1 = font.render('Level 1', True, (0, 0, 0))
-        screen.blit(text1, (50, 100))
+        screen.blit(text1, (300, 110))
 
         text2 = font.render('Level 2', True, (0, 0, 0))
-        screen.blit(text2, (50, 200))
+        screen.blit(text2, (300, 210))
 
         text3 = font.render('Level 3', True, (0, 0, 0))
-        screen.blit(text3, (50, 300))
+        screen.blit(text3, (300, 310))
 
         pygame.display.flip()
     
