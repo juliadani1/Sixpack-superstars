@@ -5,7 +5,7 @@ from constants import GRID_WIDTH, GRID_HEIGHT, GRIDSIZE
 class Food:
     def __init__(self):
         self.position = (0, 0)
-        self.color = (255, 244, 79) 
+        self.color = (220, 20, 60) 
         self.randomize_position()
 
     def randomize_position(self):
