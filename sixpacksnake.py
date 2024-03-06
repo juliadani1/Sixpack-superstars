@@ -4,6 +4,9 @@ import random
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, GRID_WIDTH, GRID_HEIGHT, UP, DOWN, LEFT, RIGHT
 from snake import Snake
 from food import Food
+from meny import display_menu
+
+
 
 def drawGrid(surface):
     for y in range(0, int(GRID_HEIGHT)):
@@ -23,6 +26,8 @@ def main():
 
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
+
+    level = display_menu()
 
     snake = Snake()
     food = Food()
@@ -53,9 +58,9 @@ def main():
         food.draw(surface)
         screen.blit(surface, (0,0))
         pygame.display.update()
-        clock.tick(10)
+        clock.tick(10 * level)
 
 if __name__ == "__main__":
     while True:
+        
         main()  # Run the main game loop
-
