@@ -1,3 +1,7 @@
+import pygame
+import sys
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+
 class GameOverMenu:
     def __init__(self):
         self.font = pygame.font.Font(None, 36)
