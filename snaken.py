@@ -1,4 +1,5 @@
 import pygame
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE
 
 class Snake:
     def __init__(self):
