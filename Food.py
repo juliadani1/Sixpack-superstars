@@ -5,12 +5,11 @@ from constants import GRID_WIDTH, GRID_HEIGHT, GRIDSIZE
 class Food:
     def __init__(self):
         self.position = (0, 0)
-        self.image = pygame.image.load(Här ska directory länken ligga)
-        self.image = pygame.transform.scale(self.image, (GRIDSIZE, GRIDSIZE))  #Laddar upp bilden
+        self.color = (255, 244, 79) 
         self.randomize_position()
 
     def randomize_position(self):
         self.position = (random.randint(0, GRID_WIDTH-1)*GRIDSIZE, random.randint(0, GRID_HEIGHT-1)*GRIDSIZE)
 
     def draw(self, surface):
-        surface.blit(self.image, self.position)  #målar upp
+        pygame.draw.rect(surface, self.color, (self.position[0], self.position[1], GRIDSIZE, GRIDSIZE))
