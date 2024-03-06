@@ -4,7 +4,7 @@ class StartMenu:
         self.levels = ["Easy", "Medium", "Hard"]
         self.font = pygame.font.Font(None, 36)
         self.text_color = (255, 255, 255)
-        self.selected_color = (255, 0, 0)
+        self.selected_color = (253, 253, 150)
         self.menu_position = (100, 100)
         self.menu_spacing = 50
 
