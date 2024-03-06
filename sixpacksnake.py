@@ -1,20 +1,9 @@
 import pygame
 import sys
 import random
-
-
-
-class Food:
-    def __init__(self):
-        self.position = (0, 0)
-        self.color = (255, 0, 0)
-        self.randomize_position()
-
-    def randomize_position(self):
-        self.position = (random.randint(0, GRID_WIDTH-1)*GRIDSIZE, random.randint(0, GRID_HEIGHT-1)*GRIDSIZE)
-
-    def draw(self, surface):
-        pygame.draw.rect(surface, self.color, (self.position[0], self.position[1], GRIDSIZE, GRIDSIZE))
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, GRID_WIDTH, GRID_HEIGHT, UP, DOWN, LEFT, RIGHT
+from snake import Snake
+from food import Food
 
 def drawGrid(surface):
     for y in range(0, int(GRID_HEIGHT)):
@@ -26,8 +15,6 @@ def drawGrid(surface):
                 rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
                 pygame.draw.rect(surface, (84, 194, 205), rr)
 
-
-From Constants.py import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, UP, DOWN, LEFT, RIGHT 
 
 def main():
     pygame.init()
@@ -66,7 +53,7 @@ def main():
         food.draw(surface)
         screen.blit(surface, (0,0))
         pygame.display.update()
-        clock.tick(12)
+        clock.tick(10)
 
 if __name__ == "__main__":
     main()
