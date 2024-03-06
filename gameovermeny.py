@@ -12,7 +12,8 @@ class GameOverMenu:
         self.selected_option = 0
 
     def draw_menu(self, surface):
-        for i, option in enumerate(self.options):
+        for i in range(len(self.options)):
+            option = self.options[i]
             text = self.font.render(option, True, self.text_color if i != self.selected_option else (255, 0, 0))
             text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, self.menu_position[1] + i * self.menu_spacing))
             surface.blit(text, text_rect)
