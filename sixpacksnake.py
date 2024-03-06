@@ -4,7 +4,7 @@ import random
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, GRID_WIDTH, GRID_HEIGHT, UP, DOWN, LEFT, RIGHT
 from snake import Snake
 from food import Food
-from startmeny import display_menu()
+from startmeny import display_menu
 
 
 
