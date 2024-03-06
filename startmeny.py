@@ -27,7 +27,7 @@ def display_menu():
                 elif button3.collidepoint(mouse_pos):
                     return 3
 
-        screen.fill((255, 255, 256))
+        screen.fill((183, 225, 238))
 
         pygame.draw.rect(screen, [253, 253, 150], button1)  # draw button
         pygame.draw.rect(screen, [237, 110, 0], button2)  # draw button
