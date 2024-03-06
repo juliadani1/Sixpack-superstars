@@ -58,5 +58,4 @@ def main():
 if __name__ == "__main__":
     while True:
         main()  # Run the main game loop
-        if not game_over():  # Check if the player wants to restart or quit
-            break
+
