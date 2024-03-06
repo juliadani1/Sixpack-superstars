@@ -1,20 +1,25 @@
-import pygame
-import sys
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
-
 class GameOverMenu:
-    def __init__(self):
-        self.font = pygame.font.Font(None, 36)
+    def __init__(self, score):
+        self.score = score
+        self.font = pygame.font.Font(None, 48)
         self.text_color = (255, 255, 255)
-        self.menu_position = (100, 100)
+        self.menu_font = pygame.font.Font(None, 36)
+        self.menu_position = (100, 200)
         self.menu_spacing = 50
         self.options = ["Restart", "Quit"]
         self.selected_option = 0
 
     def draw_menu(self, surface):
-        for i in range(len(self.options)):
-            option = self.options[i]
-            text = self.font.render(option, True, self.text_color if i != self.selected_option else (255, 0, 0))
+        game_over_text = self.font.render("GAME OVER", True, self.text_color)
+        game_over_rect = game_over_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 50))
+        surface.blit(game_over_text, game_over_rect)
+
+        score_text = self.font.render("Score: " + str(self.score), True, self.text_color)
+        score_rect = score_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
+        surface.blit(score_text, score_rect)
+
+        for i, option in enumerate(self.options):
+            text = self.menu_font.render(option, True, self.text_color if i != self.selected_option else (255, 0, 0))
             text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, self.menu_position[1] + i * self.menu_spacing))
             surface.blit(text, text_rect)
 
@@ -28,7 +33,7 @@ class GameOverMenu:
                 return self.selected_option
         return None
 
-def game_over():
+def game_over(score):
     pygame.init()
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
@@ -36,7 +41,7 @@ def game_over():
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
 
-    game_over_menu = GameOverMenu()
+    game_over_menu = GameOverMenu(score)
     is_game_over = True
 
     while is_game_over:
@@ -58,13 +63,3 @@ def game_over():
         screen.blit(surface, (0, 0))
         pygame.display.update()
         clock.tick(10)
-
-def main():
-    # Your main game loop here
-    pass
-
-if __name__ == "__main__":
-    while True:
-        main()  # Run the main game loop
-        if not game_over():  # Check if the player wants to restart or quit
-            break
