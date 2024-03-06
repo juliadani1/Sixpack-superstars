@@ -1,3 +1,7 @@
+import pygame
+import random
+from constants import GRID_WIDTH, GRID_HEIGHT, GRIDSIZE
+
 class Food:
     def __init__(self):
         self.position = (0, 0)
