@@ -16,7 +16,7 @@ def drawGrid(surface):
                 pygame.draw.rect(surface, (0, 0, 0), r)
             else:
                 rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
-                pygame.draw.rect(surface, (0, 0, 255), rr)
+                pygame.draw.rect(surface, (255, 255, 255), rr)
 
 
 def main():
