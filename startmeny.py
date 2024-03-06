@@ -29,9 +29,9 @@ def display_menu():
 
         screen.fill((0, 0, 0))
 
-        pygame.draw.rect(screen, [255, 0, 0], button1)  # draw button
-        pygame.draw.rect(screen, [0, 255, 0], button2)  # draw button
-        pygame.draw.rect(screen, [0, 0, 255], button3)  # draw button
+        pygame.draw.rect(screen, [0, 128, 0], button1)  # draw button
+        pygame.draw.rect(screen, [237, 110, 0], button2)  # draw button
+        pygame.draw.rect(screen, [210, 1, 23], button3)  # draw button
 
         text1 = font.render('Level 1', True, (0, 0, 0))
         screen.blit(text1, (50, 100))
