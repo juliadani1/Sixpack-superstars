@@ -56,4 +56,7 @@ def main():
         clock.tick(10)
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()  # Run the main game loop
+        if not game_over():  # Check if the player wants to restart or quit
+            break
