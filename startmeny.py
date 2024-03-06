@@ -1,6 +1,6 @@
 import pygame
 import sys
-
+ 
 def display_menu():
     pygame.init()
 
