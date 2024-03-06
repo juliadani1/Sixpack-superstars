@@ -18,7 +18,7 @@ class Snake:
         else:
             self.direction = point
 
-        def move(self):
+    def move(self):
         if self.direction is not None:
             cur = self.get_head_position()
             x, y = self.direction
@@ -65,10 +65,10 @@ def drawGrid(surface):
                 rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
                 pygame.draw.rect(surface, (84, 194, 205), rr)
 
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 480
+SCREEN_WIDTH = 700
+SCREEN_HEIGHT = 700
 
-GRIDSIZE = 20
+GRIDSIZE = 35
 GRID_WIDTH = SCREEN_WIDTH // GRIDSIZE
 GRID_HEIGHT = SCREEN_HEIGHT // GRIDSIZE
 
@@ -114,7 +114,7 @@ def main():
         food.draw(surface)
         screen.blit(surface, (0,0))
         pygame.display.update()
-        clock.tick(12)
+        clock.tick(10)
 
 if __name__ == "__main__":
     main()
