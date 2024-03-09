@@ -6,9 +6,8 @@ from snake import Snake
 from food import Food
 from startmeny import visa_meny
 
-
-
-def drawGrid(surface):
+# ritar upp rutnät på skärmen
+def måla_rutnät(surface):
     for y in range(0, int(GRID_HEIGHT)):
         for x in range(0, int(GRID_WIDTH)):
             if (x+y)%2 == 0:
@@ -20,15 +19,14 @@ def drawGrid(surface):
 
 
 def main():
+    # Initialiserar pygame, möjliggör reglering av hasitghet och skapar ett fönster för spelet
     pygame.init()
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
-
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
 
     level = visa_meny()
-
     snake = Snake()
     food = Food()
 
@@ -53,7 +51,7 @@ def main():
             snake.length += 1
             food.random_plats()
 
-        drawGrid(surface)
+        måla_rutnät(surface)
         snake.draw(surface)
         food.draw(surface)
         screen.blit(surface, (0,0))
