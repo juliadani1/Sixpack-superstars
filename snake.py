@@ -8,32 +8,32 @@ class Snake:
         self.direction = None  
         self.color = (160, 32, 240)
 
-    def get_head_position(self):
+    def initialisera_plats(self):
         return self.positions[0]
 
-    def turn(self, point):
+    def sväng(self, point):
         if self.length > 1 and (point[0]*-1, point[1]*-1) == self.direction:
             return
         else:
             self.direction = point
 
-    def move(self):
+    def rörelse(self):
         if self.direction is not None:
-            cur = self.get_head_position()
+            cur = self.initialisera_plats()
             x, y = self.direction
             new = (cur[0]+(x*GRIDSIZE), cur[1]+(y*GRIDSIZE))
 
             # Check if the new position is outside the screen boundaries
             if new[0] < 0 or new[0] >= SCREEN_WIDTH or new[1] < 0 or new[1] >= SCREEN_HEIGHT:
-                self.reset()
+                self.omstart()
             elif len(self.positions) > 2 and new in self.positions[2:]:
-                self.reset()
+                self.omstart()
             else:
                 self.positions.insert(0, new)
                 if len(self.positions) > self.length:
                     self.positions.pop()
 
-    def reset(self):
+    def omstart(self):
         self.length = 1
         self.positions = [((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))]
         self.direction = None  # Change this line
