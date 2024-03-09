@@ -4,7 +4,7 @@ import random
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, GRID_WIDTH, GRID_HEIGHT, UP, DOWN, LEFT, RIGHT
 from snake import Snake
 from food import Food
-from startmeny import display_menu
+from startmeny import visa_meny
 
 
 
@@ -27,7 +27,7 @@ def main():
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
 
-    level = display_menu()
+    level = visa_meny()
 
     snake = Snake()
     food = Food()
@@ -39,19 +39,19 @@ def main():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    snake.turn(UP)
+                    snake.sväng(UP)
                 elif event.key == pygame.K_DOWN:
-                    snake.turn(DOWN)
+                    snake.sväng(DOWN)
                 elif event.key == pygame.K_LEFT:
-                    snake.turn(LEFT)
+                    snake.sväng(LEFT)
                 elif event.key == pygame.K_RIGHT:
-                    snake.turn(RIGHT)
+                    snake.sväng(RIGHT)
 
-        snake.move()
+        snake.rörelse()
 
-        if snake.get_head_position() == food.position:
+        if snake.initialisera_plats() == food.position:
             snake.length += 1
-            food.randomize_position()
+            food.random_plats()
 
         drawGrid(surface)
         snake.draw(surface)
