@@ -5,7 +5,7 @@ class Snake:
     def __init__(self):
         self.length = 1
         self.positions = [((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))]
-        self.direction = None  # Change this line
+        self.direction = None  
         self.color = (160, 32, 240)
 
     def get_head_position(self):
