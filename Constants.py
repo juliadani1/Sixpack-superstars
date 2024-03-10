@@ -4,8 +4,8 @@ SCREEN_HEIGHT = 700
 
 # Storlek på rutorna i rutnätet och motsvarar antalet rutor som passar in i skärmen
 GRIDSIZE = 35
-SCREEN_WIDTH = SCREEN_WIDTH // GRIDSIZE
-SCREEN_HEIGHT = SCREEN_HEIGHT // GRIDSIZE
+GRID_WIDTH = SCREEN_WIDTH // GRIDSIZE
+GRID_HEIGHT = SCREEN_HEIGHT // GRIDSIZE
 
 # Koordinatsystem för riktningar
 UP = (0,-1)
