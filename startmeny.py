@@ -6,7 +6,7 @@ def visa_meny():
     pygame.init()
     screen = pygame.display.set_mode((700, 700))
     font = pygame.font.Font(None, 36)
-    knapp1 = pygame.Rect(250, 100, 200, 50)  # x, y, width, height
+    knapp1 = pygame.Rect(250, 100, 200, 50) 
     knapp2 = pygame.Rect(250, 200, 200, 50)
     knapp3 = pygame.Rect(250, 300, 200, 50)
 
@@ -16,7 +16,7 @@ def visa_meny():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = event.pos  # gets mouse position
+                mouse_pos = event.pos
 
                 # Kontrollerar om musen klickar på knapp
                 if knapp1.collidepoint(mouse_pos):
