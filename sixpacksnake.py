@@ -53,12 +53,11 @@ def main():
 
         måla_rutnät(surface)
         snake.draw(surface)
-        food.draw(surface)
+        food.måla(surface)
         screen.blit(surface, (0,0))
         pygame.display.update()
         clock.tick(10 * (level / 2))
 
 if __name__ == "__main__":
     while True:
-        
-        main()  # Run the main game loop
+        main()
