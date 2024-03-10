@@ -9,7 +9,7 @@ class Snake:
         self.direction = None  
         self.color = (160, 32, 240)
 
-    # Returnerar ormens startposition
+    # Returnerar positionen av ormens huvud
     def initialisera_plats(self):
         return self.positions[0]
 
