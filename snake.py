@@ -10,7 +10,7 @@ class Snake:
         self.color = (160, 32, 240)
 
     # Returnerar positionen av ormens huvud
-    def initialisera_plats(self):
+    def nuvarande_plats(self):
         return self.positions[0]
 
     # Ändrar ormens riktning
@@ -23,7 +23,7 @@ class Snake:
     # Kontrollerar när orm är utanför spelplan eller slår in i sig själv och isf startar om spel
     def rörelse(self):
         if self.direction is not None:
-            cur = self.initialisera_plats()
+            cur = self.nuvarande_plats()
             x, y = self.direction
             new = (cur[0]+(x*GRIDSIZE), cur[1]+(y*GRIDSIZE))
 
@@ -40,7 +40,7 @@ class Snake:
     def omstart(self):
         self.length = 1
         self.positions = [((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))]
-        self.direction = None  # Change this line
+        self.direction = None 
 
     # Ritar upp ormen
     def draw(self, surface):
