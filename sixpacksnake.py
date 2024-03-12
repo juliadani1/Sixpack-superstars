@@ -1,7 +1,6 @@
 import pygame
 import sys
-import random
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GRIDSIZE, GRID_WIDTH, GRID_HEIGHT, UP, DOWN, LEFT, RIGHT
+from constants import *
 from snake import Snake
 from food import Food
 from startmeny import visa_meny
@@ -11,11 +10,11 @@ def måla_rutnät(surface):
     for y in range(0, int(GRID_HEIGHT)):
         for x in range(0, int(GRID_WIDTH)):
             if (x+y)%2 == 0:
-                r = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
-                pygame.draw.rect(surface, (235, 236, 240), r)
+                ruta = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
+                pygame.draw.rect(surface, (235, 236, 240), ruta)
             else:
-                rr = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
-                pygame.draw.rect(surface, (255, 255, 255), rr)
+                ruta2 = pygame.Rect((x*GRIDSIZE, y*GRIDSIZE, GRIDSIZE, GRIDSIZE))
+                pygame.draw.rect(surface, (255, 255, 255), ruta2)
 
 
 def main():
@@ -24,7 +23,7 @@ def main():
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
     surface = pygame.Surface(screen.get_size())
-    surface = surface.convert()
+
 
     level = visa_meny()
     snake = Snake()
@@ -47,7 +46,7 @@ def main():
 
         snake.rörelse()
 
-        if snake.initialisera_plats() == food.position:
+        if snake.nuvarande_plats() == food.position:
             snake.length += 1
             food.random_plats()
 
